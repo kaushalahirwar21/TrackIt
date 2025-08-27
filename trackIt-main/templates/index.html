@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Fix for Flask static linking -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li> <!-- Fix Flask route -->
+        <li><a href="{{ url_for('student') }}">Student</a></li> <!-- Fix Flask route -->
+        <li><a href="{{ url_for('teacher') }}">Teacher</a></li> <!-- Fix Flask route -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="card">
+      <h1>Welcome to the Student Fees Billing System</h1>
+      <p>Choose your role to continue.</p>
+      <div class="button-container">
+        <button onclick="window.location.href='{{ url_for('student') }}'">Student Registration</button>
+        <button onclick="window.location.href='{{ url_for('teacher') }}'">Teacher Login</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script> <!-- Fix for Flask static linking -->
+</body>
+</html>
